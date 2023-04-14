@@ -1,0 +1,14 @@
+import { Config } from '@stencil/core';
+
+export const config: Config = {
+  namespace: '<%= Rails.application.class.module_parent_name.downcase %>',
+  srcDir: 'app/javascript/components/',
+  outputTargets: [
+    {
+      type: 'www',
+      buildDir: 'build',
+      dir: 'public',
+      indexHtml: ''
+    }
+  ],
+};
