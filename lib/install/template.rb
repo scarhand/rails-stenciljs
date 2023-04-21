@@ -12,11 +12,8 @@ if File.exist?(".gitignore")
 EOS
 end
 
-say "\nInstalling runtime dependencies"
-run "yarn add @stencil/core --cwd ."
-
-say "\nInstalling dev server for live reloading"
-run "yarn add --dev @stencil/sass @stencil/dev-server @stencil/utils @types/jest jest jest-cli puppeteer --cwd ."
+say "\nInstalling dependencies"
+run "npm install --save-dev @stencil/core @stencil/sass @types/jest jest jest-cli puppeteer --cwd ."
 
 say "\nInjecting jest configurations"
 gsub_file 'package.json', "  }\n}", <<-JSON
