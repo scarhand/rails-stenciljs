@@ -70,11 +70,7 @@ namespace :stenciljs do
 
   desc "Starts stencil dev server with --watch option"
   task dev: :verify_install do
-    sh './node_modules/.bin/sd concurrent ' \
-       '"./node_modules/.bin/stencil build --dev --watch" '
-    # sh './node_modules/.bin/sd concurrent ' \
-    #    '"./node_modules/.bin/stencil build --dev --watch" ' \
-    #    '"./node_modules/.bin/stencil-dev-server"'
+    sh "./node_modules/.bin/stencil build --dev --watch --serve"
   end
 
   desc "Starts stencil dev server with --watch option"
