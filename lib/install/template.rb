@@ -39,12 +39,4 @@ gsub_file 'app/views/layouts/application.html.erb', "</head>", <<-HTML.chomp
   </head>
 HTML
 
-if Rails.root.join("Procfile.dev").exist?
-  append_to_file "Procfile.dev", "js: bin/rails stenciljs:start\n"
-else
-  say "\n  Couldn't find Procfile.dev. To compile and watch your stencil components, "\
-      " run the following command manually in a separate terminal window:\n\n", :red
-  say "    rails stenciljs:start"
-end
-
 say "\nstenciljs successfully installed 🎉 🍰", :green

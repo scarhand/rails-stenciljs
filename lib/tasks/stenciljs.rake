@@ -68,14 +68,6 @@ namespace :stenciljs do
   desc "Alias to stencil:build"
   task compile: :build
 
-  desc "Starts stencil dev server with --watch option"
-  task dev: :verify_install do
-    sh "./node_modules/.bin/stencil build --dev --watch --serve"
-  end
-
-  desc "Starts stencil dev server with --watch option"
-  task start: :dev
-
   desc "Runs jest tests"
   task :test do
     sh './node_modules/.bin/jest --no-cache'
