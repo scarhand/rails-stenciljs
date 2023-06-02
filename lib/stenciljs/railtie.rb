@@ -14,6 +14,7 @@ module Stenciljs
     end
 
     server do
+      system "npm run --if-present prestart"
       Process.fork { system "./node_modules/.bin/stencil build --dev --watch --serve --port #{Rails.configuration.stenciljs.port}" }
     end
   end
